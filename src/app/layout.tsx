@@ -5,6 +5,8 @@ import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 
+import Navbar from "@/components/sections/Nevbar/Navbar";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -75,6 +77,7 @@ export default function RootLayout({
   )}
       >
         <ThemeProvider>
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>
