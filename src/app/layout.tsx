@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: "/favicon.ico",
-    apple: "/favicon.ico"
+    icon: "/assets/favicon.ico",
+    apple: "/assets/favicon.ico"
   },
   keywords: [...siteConfig.keywords],
   authors:[
@@ -76,7 +76,11 @@ export default function RootLayout({
     "antialiased"
   )}
       >
-        <ThemeProvider>
+        <ThemeProvider 
+        attribute="class"
+  defaultTheme="system"
+  enableSystem
+  disableTransitionOnChange>
           <Navbar />
           {children}
         </ThemeProvider>
