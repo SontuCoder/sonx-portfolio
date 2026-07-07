@@ -19,6 +19,7 @@
 
   --color-tooltip: var(--tooltip-background);
   --color-tooltip-text: var(--tooltip-text);
+  --color-logo-bg: var(--logo-bg);
 }
 
 :root {
@@ -30,6 +31,7 @@
   --ring: oklch(0.71 0 0);
   --tooltip-background: #111827;
   --tooltip-text: #F9FAFB;
+  --logo-bg: oklch(0.792 0.118 264.5);
 }
 
 .dark {
@@ -41,7 +43,7 @@
   --ring: oklch(0.56 0 0);
   --tooltip-background: #F8FAFC;
   --tooltip-text: #0F172A;
-
+  --logo-bg: oklch(0.905 0.182 98.111);
 }
 
 @layer base {

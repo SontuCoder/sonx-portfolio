@@ -1,11 +1,13 @@
-
-
+import Container from "@/components/layout/Container";
+import Hero from "@/components/sections/Hero/Hero";
 
 
 export default function Home() {
   return (
     <main>
-      Hello World
+      <Container>
+      <Hero/>
+      </Container>
     </main>
   );
 }
