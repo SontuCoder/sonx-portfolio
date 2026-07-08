@@ -25,7 +25,7 @@
 :root {
   --background: oklch(0.99 0 0);
   --foreground: #111827;
-  --secondary: #454d59;
+  --secondary: #585f6b;
   --muted: #6B7280;
   --border: oklch(0.92 0 0);
   --ring: oklch(0.71 0 0);

@@ -4,7 +4,6 @@ export const hero = {
   name: "Subhadip Maity",
 
   surnames: [
-    "Software Engineer",
     "AI Automation Engineer",
     "Systems Builder",
     "Lifelong Learner",
