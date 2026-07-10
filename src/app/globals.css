@@ -37,7 +37,7 @@
 .dark {
   --background: oklch(0.13 0 0);
   --foreground: #F9FAFB;
-  --secondary: #D1D5DB;
+  --secondary: #b2b7be;
   --muted: #9CA3AF;
   --border: oklch(1 0 0 / 10%);
   --ring: oklch(0.56 0 0);

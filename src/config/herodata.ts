@@ -1,3 +1,7 @@
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { MdMail } from "react-icons/md";
+
+
 export const hero = {
   avatar: "/assets/Hero.png",
 
@@ -15,19 +19,23 @@ export const hero = {
 
 export const heroSocials = [
   {
-    name: "linkedin",
+    name: "LinkedIn",
     href: "https://linkedin.com/in/your-profile",
+    icon: FaLinkedin,
   },
   {
-    name: "github",
+    name: "Github",
     href: "https://github.com/your-username",
+    icon: FaGithub,
   },
   {
-    name: "instagram",
+    name: "Instagram",
     href: "https://instagram.com/your-username",
+    icon: FaInstagram,
   },
   {
-    name: "email",
+    name: "Email",
     href: "mailto:hello@yourdomain.com",
+    icon: MdMail
   },
 ] as const;
