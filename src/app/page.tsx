@@ -1,4 +1,5 @@
 import Container from "@/components/layout/Container";
+import Experience from "@/components/sections/Experience/Works";
 import Hero from "@/components/sections/Hero/Hero";
 
 
@@ -7,6 +8,7 @@ export default function Home() {
     <main>
       <Container>
       <Hero/>
+      <Experience/>
       </Container>
     </main>
   );
