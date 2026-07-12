@@ -15,6 +15,9 @@ export const hero = {
 
   punchline:
     "Building intelligent software, AI-powered automation, and scalable digital experiences.",
+  music: "/music/Roi.mp3",
+  musicName: "Roi",
+  musicSinger: ""
 } as const;
 
 export const heroSocials = [

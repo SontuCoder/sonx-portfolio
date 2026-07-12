@@ -19,7 +19,7 @@ function HeroLogo() {
 function HeroMusic(){
     return (
         <div className="text-muted flex items-center text-sm md:flex">
-            <MiniPlayer src="/music/Roi.mp3" title="Roi" />
+            <MiniPlayer src={hero.music} title={hero.musicName} artist={hero.musicSinger} />
         </div>
     )
 }

@@ -6,6 +6,8 @@ import { siteConfig } from "@/config/site";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 
 import Navbar from "@/components/sections/Nevbar/Navbar";
+import Container from "@/components/layout/Container";
+
 
 
 const geistSans = Geist({
@@ -82,7 +84,9 @@ export default function RootLayout({
   enableSystem
   disableTransitionOnChange>
           <Navbar />
+          <Container>
           {children}
+          </Container>
         </ThemeProvider>
       </body>
     </html>

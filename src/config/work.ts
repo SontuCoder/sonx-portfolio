@@ -16,6 +16,11 @@ type EmploymentType =
 
 type WorkMode = "Remote" | "Hybrid" | "On-site";
 
+type Tech = {
+  name: string,
+  icon: string
+}
+
 interface Role {
   position: string;
   summary?: string;
@@ -26,7 +31,7 @@ interface Role {
   startDate: Date;
   endDate: Date | null;
 
-  technologies: readonly string[];
+  technologies: readonly Tech[];
   highlights?: readonly string[];
   achievements: readonly string[];
 }
@@ -42,7 +47,7 @@ interface Work {
   location: string;
   currentlyWorking: boolean;
 
-  roles: readonly Role[];
+  role: Role;
 
   recommendations?: readonly Recommendation[];
 }
@@ -62,8 +67,7 @@ export const works = [
     location: "Noida, India",
     currentlyWorking: false,
 
-    roles: [
-      {
+    role: {
         position: "API Software Developer",
 
         summary:
@@ -75,11 +79,22 @@ export const works = [
         startDate: new Date("2025-06-01"),
         endDate: new Date("2026-04-01"),
 
-        technologies: [
-          "UiPath",
-          "SQL Server",
-          "Git",
-          "Excel",
+        technologies: [ {
+    name: "Next.js",
+    icon: "logos:nextjs-icon",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: "logos:tailwindcss-icon",
+  },
+  {
+    name: "TypeScript",
+    icon: "logos:typescript-icon",
+  },
+  {
+    name: "React",
+    icon: "logos:react",
+  }
         ],
 
         highlights: [
@@ -92,38 +107,6 @@ export const works = [
           "Integrated SQL databases with UiPath.",
         ],
       },
-
-      {
-        position: "AI Software Developer",
-
-        summary:
-          "Led automation initiatives and delivered production-ready bots.",
-
-        employmentType: "Full-time",
-        workMode: "Hybrid",
-
-        startDate: new Date("2024-07-01"),
-        endDate: null,
-
-        technologies: [
-          "UiPath",
-          "C#",
-          "REST APIs",
-          "Power Automate",
-        ],
-
-        highlights: [
-          "15+ production automations",
-          "80% manual effort reduction",
-        ],
-
-        achievements: [
-          "Designed reusable automation frameworks.",
-          "Mentored junior developers.",
-          "Improved bot reliability and monitoring.",
-        ],
-      },
-    ],
 
     recommendations: [
       {
@@ -146,37 +129,7 @@ export const works = [
     location: "Noida, India",
     currentlyWorking: true,
 
-    roles: [
-      {
-        position: "Associate Software Developer",
-
-        summary:
-          "Built and maintained enterprise automation solutions using UiPath.",
-
-        employmentType: "Full-time",
-        workMode: "Hybrid",
-
-        startDate: new Date("2024-08"),
-        endDate: new Date("2025-06"),
-
-        technologies: [
-          "UiPath",
-          "SQL Server",
-          "Git",
-          "Excel",
-        ],
-
-        highlights: [
-          "8+ automations delivered",
-          "60% reduction in manual effort",
-        ],
-
-        achievements: [
-          "Developed enterprise automation workflows.",
-          "Integrated SQL databases with UiPath.",
-        ],
-      },
-
+    role: 
       {
         position: "Software Developer",
 
@@ -189,11 +142,22 @@ export const works = [
         startDate: new Date("2025-07"),
         endDate: null,
 
-        technologies: [
-          "UiPath",
-          "C#",
-          "REST APIs",
-          "Power Automate",
+        technologies: [ {
+    name: "Next.js",
+    icon: "logos:nextjs-icon",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: "logos:tailwindcss-icon",
+  },
+  {
+    name: "TypeScript",
+    icon: "logos:typescript-icon",
+  },
+  {
+    name: "React",
+    icon: "logos:react",
+  }
         ],
 
         highlights: [
@@ -207,7 +171,6 @@ export const works = [
           "Improved bot reliability and monitoring.",
         ],
       },
-    ],
 
     recommendations: [
       {
@@ -221,4 +184,4 @@ export const works = [
 
 ] as const satisfies readonly Work[];
 
-export type { Work, Role };
+export type { Work, Role, Tech };

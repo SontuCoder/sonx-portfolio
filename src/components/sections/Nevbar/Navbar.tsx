@@ -43,7 +43,7 @@ function NavbarLinks() {
 function NavbarLogo() {
     return (
         <TooltipWrapper text="Home">
-            <Link href="/" aria-label="Home">
+            <Link href="/" aria-label="Home" className="hidden sm:block">
                 <div className="bg-logo-bg flex items-center justify-center rounded-md p-px">
                     <img
                         src="/assets/Hero.png"
@@ -71,7 +71,7 @@ export default function Navbar() {
                         {/* Logo */}
                         <NavbarLogo />
 
-                        <ul className="flex items-center gap-6 text-xs">
+                        <ul className="flex items-center pl-6 sm:pl-0 gap-4 md:gap-6 text-xs">
                             {/* Navigation Links */}
                             <NavbarLinks />
                         </ul>
