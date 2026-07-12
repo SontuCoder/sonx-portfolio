@@ -32,7 +32,6 @@ interface Role {
   endDate: Date | null;
 
   technologies: readonly Tech[];
-  highlights?: readonly string[];
   achievements: readonly string[];
 }
 
@@ -97,11 +96,6 @@ export const works = [
   }
         ],
 
-        highlights: [
-          "8+ automations delivered",
-          "60% reduction in manual effort",
-        ],
-
         achievements: [
           "Developed enterprise automation workflows.",
           "Integrated SQL databases with UiPath.",
@@ -158,11 +152,6 @@ export const works = [
     name: "React",
     icon: "logos:react",
   }
-        ],
-
-        highlights: [
-          "15+ production automations",
-          "80% manual effort reduction",
         ],
 
         achievements: [

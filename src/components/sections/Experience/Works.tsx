@@ -15,10 +15,11 @@ import { ChevronRight } from "lucide-react";
 import ViewMoreButton from "@/components/common/button";
 
 export function getSortedWorks() {
-  return [...works].sort(
-    (a, b) => b.role.startDate.getTime() - a.role.startDate.getTime()
-  );
+    return [...works].sort(
+        (a, b) => b.role.startDate.getTime() - a.role.startDate.getTime()
+    );
 }
+
 
 export default function Experience() {
     const companies = getSortedWorks().slice(0, 3);
@@ -50,7 +51,7 @@ function renderCompany(company: Work) {
                 <CompanyHeader company={company} currentRole={currentRole} />
             </AccordionTrigger>
 
-            <AccordionContent className="space-y-8">
+            <AccordionContent className="space-y-8 px-4">
                 <TechnologySection technologies={currentRole.technologies} />
 
                 <AchievementsSection achievements={currentRole.achievements} />

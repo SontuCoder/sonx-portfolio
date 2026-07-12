@@ -20,6 +20,7 @@
   --color-tooltip: var(--tooltip-background);
   --color-tooltip-text: var(--tooltip-text);
   --color-logo-bg: var(--logo-bg);
+  --color-p1-color: var(--p1-color)
 }
 
 :root {
@@ -32,6 +33,7 @@
   --tooltip-background: #111827;
   --tooltip-text: #F9FAFB;
   --logo-bg: oklch(0.792 0.118 264.5);
+  --p1-color: #00B894;
 }
 
 .dark {
@@ -44,6 +46,7 @@
   --tooltip-background: #F8FAFC;
   --tooltip-text: #0F172A;
   --logo-bg: oklch(0.905 0.182 98.111);
+  --p1-color: #003930;
 }
 
 @layer base {

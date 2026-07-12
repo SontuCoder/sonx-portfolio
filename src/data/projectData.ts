@@ -25,8 +25,8 @@ export interface ProjectMeta {
   category: ProjectCategory[];
   status: ProjectStatus;
 
-  startDate: string;
-  endDate?: string | null;
+  startDate: Date;
+  endDate: Date | null;
 
   role: string;
   team: "Solo" | "Team";
@@ -40,8 +40,7 @@ export interface ProjectMeta {
     live?: string;
   };
 
-  colors?: {
-    background: string;
+  colors: {
     primary: string;
   };
 }
@@ -50,13 +49,12 @@ export interface ProjectContent {
   overview: string;
   features: string[];
   challenges?: string[];
-  highlights?: string[];
   learnings?: string[];
   futureImprovements?: string[];
 }
 
 export interface ProjectDetails extends ProjectMeta {
-  content: ProjectContent;
+  content: string;
 }
 
 
