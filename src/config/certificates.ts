@@ -8,12 +8,12 @@ type CertificateMeta = {
   featured: boolean;
 };
 
-interface CertificateDetails extends CertificateMeta {
+export interface CertificateDetails extends CertificateMeta {
   verificationUrl?: string;
   learn: readonly string[];
 }
 
-const certificates: CertificateDetails[] = [
+export const certificates: CertificateDetails[] = [
   {
     name: "Automation Developer Associate",
     code: "UIPATH-ADAV1",

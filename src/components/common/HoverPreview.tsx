@@ -39,9 +39,9 @@ export default function HoverPreview({ title, src, x, y }: HoverPreviewProps) {
                         <Image
                             src={src}
                             alt={title}
-                            width={320}
-                            height={200}
-                            className="h-52 w-80 object-cover"
+                            width={280}
+                            height={148}
+                            className="h-37 w-70 object-cover"
                         />
                     </div>
                 </motion.div>

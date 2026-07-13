@@ -12,7 +12,7 @@ import {
 import { works, Work, Role, Tech } from "@/config/work";
 import TooltipWrapper from "@/providers/TooltipWrapper";
 import { ChevronRight } from "lucide-react";
-import ViewMoreButton from "@/components/common/button";
+import {ViewMoreButton} from "@/components/common/button";
 
 export function getSortedWorks() {
     return [...works].sort(

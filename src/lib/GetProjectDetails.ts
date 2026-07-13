@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 
-import type { ProjectDetails } from "@/data/projectData";
+import type { ProjectContent, ProjectDetails } from "@/data/projectData";
 
 const PROJECTS_PATH = path.join(process.cwd(), "src", "data", "Projects");
 
@@ -37,7 +37,7 @@ export function getProjectBySlug(slug: string): ProjectDetails | null {
 
     return {
         ...(data as Omit<ProjectDetails, "content">),
-        content,
+        content: parseProjectContent(content),
     };
 }
 
@@ -69,6 +69,17 @@ export function getLatestProjects() {
     return [...getAllProjects()].sort(
         (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime(),
     );
+}
+
+export function parseProjectContent(content: string): ProjectContent {
+    return {
+        overview: "",
+        features: [],
+        challenges: [],
+        learnings: [],
+        futureImprovements: [],
+        highlights: [],
+    };
 }
 
 export function getRelatedProjects(slug: string) {

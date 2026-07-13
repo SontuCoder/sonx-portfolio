@@ -1,6 +1,6 @@
 "use client";
 
-import ViewMoreButton from "@/components/common/button";
+import {ShowDetails, ViewMoreButton} from "@/components/common/button";
 import { Accordion } from "@radix-ui/react-accordion";
 import { ProjectCategory, ProjectDetails, ProjectStatus } from "@/data/projectData";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -14,28 +14,13 @@ import { Icon } from "@iconify/react";
 
 
 
-interface projectHeaderData {
-        title: string,
-        description: string,
-        cover: string,
-        category: readonly ProjectCategory[],
-        startDate: Date,
-        endDate: Date | null,
-        team: "Solo" | "Team",
-        status: ProjectStatus,
-        color1: string,
-    }
-
 type HoverProject = {
     title: string;
     src: string;
 };
 
-interface ProjectSectionProps {
-    projects: ProjectDetails[];
-}
 
-export default function ProjectSection ( {projects}: ProjectSectionProps){
+export default function ProjectSection ( {projects}: {projects:ProjectDetails[]}){
 
 
     const [hoveredProject, setHoveredProject] = useState<HoverProject | null>(null);
@@ -47,7 +32,7 @@ export default function ProjectSection ( {projects}: ProjectSectionProps){
     return (
         <section id="project" aria-labelledby="project-heading" className="mt-14">
             <h2
-                id="experience-heading"
+                id="project-heading"
                 className="test-foreground font-mono text-md font-semibold tracking-tight md:text-2xl"
             >
                 Projects
@@ -66,23 +51,12 @@ function renderProject(project : ProjectDetails,  setHoveredProject:React.Dispat
     React.SetStateAction<HoverProject | null>>,
     mouseX: MotionValue<number>,
     mouseY: MotionValue<number>,) {
-        const projectData : projectHeaderData = {
-        title: project.title,
-        description: project.description,
-        cover: project.cover,
-        category: project.category,
-        startDate: project.startDate,
-        endDate: project.endDate,
-        team: project.team,
-        status: project.status,
-        color1: project.colors?.primary,
-    }
 
     return (
         <AccordionItem key={project.slug} value={project.slug}>
             <AccordionTrigger className="group cursor-pointer hover:no-underline focus:no-underline focus-visible:no-underline"
                 onMouseEnter={() =>
-        setHoveredProject({title: projectData.title, src: projectData.cover})
+        setHoveredProject({title: project.title, src: project.cover})
     }
         onMouseMove={(e) => {
         mouseX.set(e.clientX + 25);
@@ -92,23 +66,22 @@ function renderProject(project : ProjectDetails,  setHoveredProject:React.Dispat
         setHoveredProject(null)
     }
             >
-                <ProjectHeader {...projectData}/>
+                <ProjectHeader {...project}/>
             </AccordionTrigger>
 
             <AccordionContent className="space-y-8 px-4">
                 <TechnologySection technologies={project.technologies} />
-
-                {/* <AchievementsSection achievements={currentRole.achievements} /> */}
+                <ProjectShortDetails project={project}/>
             </AccordionContent>
         </AccordionItem>
     );
 }
 
 
-function ProjectHeader (projectData : projectHeaderData){
+function ProjectHeader (projectData : ProjectDetails){
 
     return (
-        <div className={`flex w-full flex-col border-l-4 rounded-md border-t-4 pl-4 pt-4 border-${projectData.color1}`}>
+        <div className={`flex w-full flex-col border-l-4 rounded-md border-t-4 pl-4 pt-4 border-${projectData.colors.primary}`}>
         <div className="flex w-full items-start gap-4 text-left ">
 
             <div className="flex-1">
@@ -117,7 +90,7 @@ function ProjectHeader (projectData : projectHeaderData){
 
                     <ChevronRight className="h-4 w-4 -translate-x-1 rounded bg-slate-500/20 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100 group-data-[state=open]:translate-x-0 group-data-[state=open]:rotate-90 group-data-[state=open]:opacity-100" />
                 </div>
-                <p className="text-muted text-sm">{projectData.category}</p>
+                <p className="text-muted text-sm">{projectData.category.join(" • ")}</p>
             </div>
             <div className="flex flex-col items-end gap-1 text-right">
                 {projectData.status !== "Completed" && (
@@ -175,4 +148,25 @@ function TechnologySection({ technologies }: { technologies: string[] }) {
 }
 
 
-// function ProjectShortDetails()
+function ProjectShortDetails(
+    {project } : 
+    {project: ProjectDetails}) {
+        return (
+            <div>
+            <h4 className="mb-3 mt-4 font-semibold text-xs">Highlights</h4>
+
+            <ul className="list-disc space-y-1 pl-5 text-xs text-muted">
+                {project.content.highlights.map((item) => (
+                    <li key={item}>{item}</li>
+                ))}
+            </ul>
+            <ul className="list-disc space-y-1 pl-5 text-xs text-muted">
+                <li key="github">{project.links?.github ? <ShowDetails href={project.links.github} text="Goto repo tour" external />  : "coming"}</li>
+                <li key="live">{project.links?.live ? 
+                    <ShowDetails href={project.links.live} text="Take a look" external /> 
+                    : "Live coming"}</li>
+            </ul>
+            <ShowDetails href={`/project/${project.slug}`} text="Show details" external={false}/>
+        </div>
+        )
+}

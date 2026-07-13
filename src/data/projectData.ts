@@ -33,8 +33,6 @@ export interface ProjectMeta {
 
   technologies: string[];
 
-  highlights?: string[];
-
   links: {
     github?: string;
     live?: string;
@@ -51,10 +49,11 @@ export interface ProjectContent {
   challenges?: string[];
   learnings?: string[];
   futureImprovements?: string[];
+  highlights: string[];
 }
 
 export interface ProjectDetails extends ProjectMeta {
-  content: string;
+  content: ProjectContent;
 }
 
 

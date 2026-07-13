@@ -1,14 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 interface ViewMoreButtonProps {
     text: string;
     href: string;
 }
 
-export default function ViewMoreButton({ text, href }: ViewMoreButtonProps) {
+export function ViewMoreButton({ text, href }: ViewMoreButtonProps) {
     return (
         <div className="mt-8 mb-10 flex justify-center">
             <Link
@@ -20,4 +20,20 @@ export default function ViewMoreButton({ text, href }: ViewMoreButtonProps) {
             </Link>
         </div>
     );
+}
+
+export function ShowDetails({href, text, external}:{href: string, text:string, external:boolean}){
+    return(
+        <div className="my-1 flex justify-start">
+            <Link
+                href={href}
+                target={external ? "_blank" : undefined}
+                rel={external ? "noopener noreferrer" : undefined}
+                className="group text-muted hover:text-foreground inline-flex items-left py-1 text-sm font-semibold transition-all duration-200"
+            >
+                {text}
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+            </Link>
+        </div>
+    )
 }
