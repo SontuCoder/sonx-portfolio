@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/providers/ThemeProvider";
 
 import Navbar from "@/components/sections/Nevbar/Navbar";
 import Container from "@/components/layout/Container";
+import Footer from "@/components/sections/Footer/Footer";
 
 
 
@@ -87,6 +88,7 @@ export default function RootLayout({
           <Container>
           {children}
           </Container>
+          <Footer/>
         </ThemeProvider>
       </body>
     </html>
