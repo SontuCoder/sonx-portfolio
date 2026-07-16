@@ -1,15 +1,14 @@
 import Container from "@/components/layout/Container";
-import { Card, CardContent } from "@/components/ui/card";
 import { heroSocials } from "@/config/herodata";
-import { footerNavigation, footerQuote } from "@/config/navigation";
+import { footerNavigation } from "@/config/navigation";
+import TooltipWrapper from "@/providers/TooltipWrapper";
 import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="">
+        <footer className="border-y bg-card-bg/70">
             <Container>
-                <FooterQuotePart />
-                <div className="grid gap-12 md:grid-cols-2 border-y">
+                <div className="grid gap-12 md:grid-cols-2 mt-12 text-muted">
                     <FooterNavigation />
                     <FooterSocial />
                 </div>
@@ -19,54 +18,22 @@ export default function Footer() {
     );
 }
 
-function FooterQuotePart() {
-    return (
-        <Card className="mb-14 rounded-3xl relative overflow-hidden border bg-card">
-            <CardContent className="p-8 relative">
-                    <div
-      aria-hidden
-      className="
-        absolute
-        left-6
-        bottom-2
-        text-[11rem]
-        font-serif
-        leading-none
-        text-muted-foreground/5
-        select-none
-        pointer-events-none
-      "
-    >
-      “
-    </div>
-                <blockquote className="space-y-2">
-                    <p className="text-muted text-md font-semibold italic">
-                        "{footerQuote.text}"
-                    </p>
-
-                    <footer className="text-muted text-sm text-right">
-                        — {footerQuote.author}
-                    </footer>
-                </blockquote>
-            </CardContent>
-        </Card>
-    );
-}
 
 function FooterNavigation() {
     return (
         <div>
-            <h3 className="mb-6 text-sm font-semibold tracking-widest uppercase">Navigate</h3>
+            <h3 className="mb-6 text-xs font-semibold tracking-widest uppercase">Navigate</h3>
 
-            <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+            <div className="grid grid-cols-3 gap-x-6 gap-y-2">
                 {footerNavigation.map((item) => (
                     <Link
                         key={item.name}
                         href={item.href}
-                        className="text-muted-foreground hover:text-foreground transition-colors"
+                        className="hover:text-foreground transition-colors text-xs"
                     >
                         {item.name}
                     </Link>
+
                 ))}
             </div>
         </div>
@@ -76,19 +43,20 @@ function FooterNavigation() {
 function FooterSocial() {
     return (
         <div>
-            <h3 className="mb-6 text-sm font-semibold tracking-widest uppercase">Connect</h3>
-
-            <div className="grid grid-cols-4 gap-4">
+            <h3 className="mb-6 text-xs font-semibold tracking-widest uppercase">Connect</h3>
+            <div className="grid grid-cols-8 gap-4">
                 {heroSocials.map((social) => {
                     return (
+                        <TooltipWrapper key={social.name} text={social.name}>
                         <Link
                             key={social.name}
                             href={social.href}
                             target="_blank"
-                            className="hover:bg-muted flex h-12 w-12 items-center justify-center rounded-xl border transition-all"
+                            className="hover:bg-muted/10 flex h-8 w-8 items-center justify-center rounded-md border transition-all"
                         >
-                            <social.icon className="h-5 w-5" />
+                            <social.icon className="h-4 w-4" />
                         </Link>
+                        </TooltipWrapper>
                     );
                 })}
             </div>
@@ -98,8 +66,8 @@ function FooterSocial() {
 
 function RightsPart() {
     return (
-        <div className="mt-16 border-t pt-8">
-            <p className="text-muted-foreground text-sm">
+        <div className="mt-12 border-t py-6">
+            <p className="text-muted text-xs">
                 © {new Date().getFullYear()} Subhadip Maity. All rights reserved.
             </p>
         </div>

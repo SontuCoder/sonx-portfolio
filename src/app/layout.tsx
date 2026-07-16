@@ -4,11 +4,12 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import { ThemeProvider } from "@/providers/ThemeProvider";
+import { hankenGrotesk } from "./font";
 
 import Navbar from "@/components/sections/Nevbar/Navbar";
 import Container from "@/components/layout/Container";
 import Footer from "@/components/sections/Footer/Footer";
-
+import FooterQuotePart from "@/components/common/Quote";
 
 
 const geistSans = Geist({
@@ -64,12 +65,8 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn(
-    geistSans.variable,
-    geistMono.variable
-  )}
-
-    >
+      className={hankenGrotesk.variable}
+  >
       <body
         className={cn(
     "min-h-screen",
@@ -87,6 +84,7 @@ export default function RootLayout({
           <Navbar />
           <Container>
           {children}
+          <FooterQuotePart />
           </Container>
           <Footer/>
         </ThemeProvider>

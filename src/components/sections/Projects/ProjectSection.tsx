@@ -79,9 +79,9 @@ function renderProject(project : ProjectDetails,  setHoveredProject:React.Dispat
 
 
 function ProjectHeader (projectData : ProjectDetails){
-
+    console.log(projectData.colors.primary)
     return (
-        <div className={`flex w-full flex-col border-l-4 rounded-md border-t-4 pl-4 pt-4 border-${projectData.colors.primary}`}>
+        <div className={`flex w-full flex-col border-l-4 rounded-md border-t-4 pl-4 pt-4 `} style={{borderColor: `var(${projectData.colors.primary})`}}>
         <div className="flex w-full items-start gap-4 text-left ">
 
             <div className="flex-1">
