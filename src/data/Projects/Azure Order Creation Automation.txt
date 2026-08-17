@@ -1,0 +1,25 @@
+Azure NOR Order Creation Automation:
+========================================
+
+1. Get Azure Orders where "Automation Hub" field = "Requested" By API.
+2. Get A Json Object from Azure.
+3. Loop through the Json Object.
+4. pick One Azure Order.
+5. Capture Details from Azure and File path.
+6. If Details are missing throw BRE.
+7. Read File from share Drive and extract mandatory details.
+8. If Details are missing throw BRE.
+9. Open NOR Application navigate to order tab.
+10. Create NOR Order with Details.
+11. Change order status a pre-pending.
+12. Save .
+13. Search Order on NOR.
+14. Open Order change Status "In-Progress"
+15. save.
+16. Upload brief file from share Drive if "Bre-file name" is not null on Azure.
+17. Edit Details (status = Completed, Order number, Date) on Azure by API.
+18. In case of any BRE or SYS exception then change status = Faulted and send mail to project Owners.
+18. Notify project Owners by Editing Notes field on Azure by API.
+19. Log file update for transaction tracking.
+20. If there are no more transactions. Log out NOR system.
+21. Move Log file on Share Drive Logs Folder.
