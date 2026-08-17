@@ -54,7 +54,7 @@ For cases requiring human review, UiPath Action Center handles the Human-in-the-
 This separation of Dispatcher, Human-in-the-Loop validation, and Performer makes the solution modular, reliable, and scalable.
 
 ## Features
-
+    - Email Automation
     - Dispatcher and Performer architecture
     - UiPath REFramework-based transaction processing
     - Multi-document loan application processing
@@ -87,7 +87,7 @@ This separation of Dispatcher, Human-in-the-Loop validation, and Performer makes
    - Implemented duplicate-loan validation, Business Exception handling, and automated customer notifications.
 
 ## What I Learned
-
+    - Email Automation
     - UiPath REFramework
     - Dispatcher–Performer architecture
     - Document Understanding
