@@ -7,7 +7,9 @@ export type ProjectCategory =
   | "Automation"
   | "AI"
   | "Agentic"
-  | "System Design";
+  | "System Design"
+  | "UiPath Action Center"
+  | "Document Understanding";
 
 export interface ProjectMeta {
   slug: string;
