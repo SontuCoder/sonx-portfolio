@@ -1,3 +1,2 @@
 # Edit config/site.ts
-# Make a ogImageupload all image on Cloudinary
-# 
+# Add awards section in Main page

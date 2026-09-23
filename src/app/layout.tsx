@@ -10,6 +10,7 @@ import Navbar from "@/components/sections/Nevbar/Navbar";
 import Container from "@/components/layout/Container";
 import Footer from "@/components/sections/Footer/Footer";
 import FooterQuotePart from "@/components/common/Quote";
+import Cat from "@/components/common/Cat";
 
 
 const geistSans = Geist({
@@ -85,6 +86,7 @@ export default function RootLayout({
           <Container>
           {children}
           <FooterQuotePart />
+          <Cat />
           </Container>
           <Footer/>
         </ThemeProvider>

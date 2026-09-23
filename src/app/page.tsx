@@ -1,3 +1,4 @@
+import Awards from "@/components/sections/Awards/Awards";
 import CertificateSection from "@/components/sections/Certificate/Certificate";
 import Experience from "@/components/sections/Experience/Works";
 import Hero from "@/components/sections/Hero/Hero";
@@ -15,6 +16,7 @@ export default function Home() {
       <Experience/>
       <ProjectSection projects = {projects}/>
       <CertificateSection />
+      <Awards/>
     </main>
   );
 }
