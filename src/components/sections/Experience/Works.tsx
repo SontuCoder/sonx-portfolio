@@ -13,6 +13,7 @@ import { works, Work, Role, Tech } from "@/config/work";
 import TooltipWrapper from "@/providers/TooltipWrapper";
 import { ChevronRight } from "lucide-react";
 import {ViewMoreButton} from "@/components/common/button";
+import { FadeIn } from "@/components/common/FadeIn";
 
 export function getSortedWorks() {
     return [...works].sort(
@@ -26,26 +27,32 @@ export default function Experience() {
 
     return (
         <section id="experience" aria-labelledby="experience-heading" className="mt-14">
+            <FadeIn
+            delay={0.1}
+            >
             <h2
                 id="experience-heading"
                 className="test-foreground font-mono text-md font-semibold tracking-tight md:text-2xl"
             >
                 Experience
             </h2>
-
+            </FadeIn>
             <Accordion type="single" collapsible>
                 {companies.map(renderCompany)}
             </Accordion>
+            <FadeIn delay={0.2 + companies.length * 0.1}>
             <ViewMoreButton text="experience" href="/work" />
+            </FadeIn>
         </section>
     );
 }
 
 
-function renderCompany(company: Work) {
+function renderCompany(company: Work, index: number) {
     const currentRole = company.role;
 
     return (
+        <FadeIn delay={0.2 + index * 0.1} key={company.id}>
         <AccordionItem key={company.id} value={company.id}>
             <AccordionTrigger className="group cursor-pointer hover:no-underline focus:no-underline focus-visible:no-underline">
                 <CompanyHeader company={company} currentRole={currentRole} />
@@ -57,6 +64,7 @@ function renderCompany(company: Work) {
                 <AchievementsSection achievements={currentRole.achievements} />
             </AccordionContent>
         </AccordionItem>
+        </FadeIn>
     );
 }
 
@@ -73,7 +81,7 @@ function CompanyHeader({ company, currentRole }: { company: Work; currentRole: R
                     alt={company.company}
                     width={80}
                     height={52}
-                    className=""
+                    className="h-4 w-auto"
                 />
             </div>
 
@@ -130,7 +138,7 @@ function TechnologySection({ technologies }: { technologies: readonly Tech[] }) 
                 {technologies.map((tech) => (
                     <TooltipWrapper key={tech.name} text={tech.name}>
                         <div className="border-muted/20 hover:bg-slate-500/50 bg-slate-500/10 flex h-7 w-7 items-center justify-center rounded-md border-2 border-dashed transition-all hover:scale-105">
-                            <Icon icon={tech.icon} className="h-4 w-4" />
+                            <Icon icon={tech.icon} className="h-5 w-5" />
                         </div>
                     </TooltipWrapper>
                 ))}

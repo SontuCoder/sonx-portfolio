@@ -1,3 +1,4 @@
+import { FadeIn } from "@/components/common/FadeIn";
 import { hero, heroSocials } from "@/config/herodata";
 import TooltipWrapper from "@/providers/TooltipWrapper";
 import MiniPlayer from "@/utils/Spotify";
@@ -18,9 +19,11 @@ function HeroLogo() {
 
 function HeroMusic(){
     return (
+        <FadeIn delay={0.1}>
         <div className="text-muted flex items-center text-sm md:flex">
             <MiniPlayer src={hero.music} title={hero.musicName} artist={hero.musicSinger} />
         </div>
+        </FadeIn>
     )
 }
 
@@ -32,7 +35,7 @@ export default function Hero() {
             aria-labelledby="hero-heading"
             className="flex flex-col items-start pt-6"
         >
-            <div className="flex min-w-full items-center gap-5">
+            <div data-pet-safe-zone className="flex min-w-full items-center gap-5">
                 <HeroLogo />
 
                 <div className="flex min-w-0 flex-1 flex-col">
@@ -72,7 +75,8 @@ export default function Hero() {
                     <HeroMusic />
 
                     <nav aria-label="Social media links" className="flex items-center gap-4">
-                        {heroSocials.map((social) => (
+                        {heroSocials.map((social, index) => (
+                            <FadeIn key={social.name} delay={index * 0.1}>
                             <TooltipWrapper key={social.name} text={social.name}>
                                 <Link
                                     href={social.href}
@@ -85,6 +89,7 @@ export default function Hero() {
                                     <social.icon className="size-5" />
                                 </Link>
                             </TooltipWrapper>
+                            </FadeIn>
                         ))}
                     </nav>
                 </div>

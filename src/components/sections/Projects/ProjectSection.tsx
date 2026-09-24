@@ -2,7 +2,7 @@
 
 import {ShowDetails, ViewMoreButton} from "@/components/common/button";
 import { Accordion } from "@radix-ui/react-accordion";
-import { ProjectCategory, ProjectDetails, ProjectStatus } from "@/data/projectData";
+import { ProjectDetails} from "@/data/projectData";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ChevronRight } from "lucide-react";
 import { useState } from "react";
@@ -11,6 +11,7 @@ import { useMotionValue, MotionValue } from "framer-motion";
 import { useMediaQuery } from "usehooks-ts";
 import TooltipWrapper from "@/providers/TooltipWrapper";
 import { Icon } from "@iconify/react";
+import { FadeIn } from "@/components/common/FadeIn";
 
 
 
@@ -31,17 +32,21 @@ export default function ProjectSection ( {projects}: {projects:ProjectDetails[]}
     const isDesktop = useMediaQuery("(hover: hover) and (pointer: fine)");
     return (
         <section id="project" aria-labelledby="project-heading" className="mt-14">
+            <FadeIn delay={0.3}>
             <h2
                 id="project-heading"
                 className="test-foreground font-mono text-md font-semibold tracking-tight md:text-2xl"
             >
                 Projects
             </h2>
+            </FadeIn>
             <Accordion type="single" collapsible>
-                {projects.map(project => renderProject(project,  setHoveredProject, mouseX, mouseY))}
+                {projects.map((project, index) => renderProject(project,  setHoveredProject, mouseX, mouseY, index))}
             </Accordion>
             { isDesktop && <HoverPreview title={hoveredProject?.title} src={hoveredProject?.src} x={mouseX} y={mouseY} /> }
+            <FadeIn delay={0.3 + projects.length * 0.1}>
             <ViewMoreButton text="projects" href="/projects" />
+            </FadeIn>
         </section>
     )
 }
@@ -50,9 +55,10 @@ export default function ProjectSection ( {projects}: {projects:ProjectDetails[]}
 function renderProject(project : ProjectDetails,  setHoveredProject:React.Dispatch<
     React.SetStateAction<HoverProject | null>>,
     mouseX: MotionValue<number>,
-    mouseY: MotionValue<number>,) {
+    mouseY: MotionValue<number>, index: number) {
 
     return (
+        <FadeIn delay={0.3 + index * 0.1} key={project.slug}>
         <AccordionItem key={project.slug} value={project.slug}>
             <AccordionTrigger className="group cursor-pointer hover:no-underline focus:no-underline focus-visible:no-underline"
                 onMouseEnter={() =>
@@ -74,6 +80,7 @@ function renderProject(project : ProjectDetails,  setHoveredProject:React.Dispat
                 <ProjectShortDetails project={project}/>
             </AccordionContent>
         </AccordionItem>
+        </FadeIn>
     );
 }
 

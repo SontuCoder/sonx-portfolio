@@ -23,22 +23,22 @@ export const hero = {
 export const heroSocials = [
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/your-profile",
+    href: "https://www.linkedin.com/in/subhadip-maity-5ba595300/",
     icon: FaLinkedin,
   },
   {
     name: "Github",
-    href: "https://github.com/your-username",
+    href: "https://github.com/SontuCoder",
     icon: FaGithub,
   },
   {
     name: "Instagram",
-    href: "https://instagram.com/your-username",
+    href: "https://www.instagram.com/subha_dip002",
     icon: FaInstagram,
   },
   {
     name: "Email",
-    href: "mailto:hello@yourdomain.com",
+    href: "mailto:subhadipmaity791@gmail.com",
     icon: MdMail
   },
 ] as const;
