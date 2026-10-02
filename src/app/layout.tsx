@@ -40,6 +40,9 @@ export const metadata: Metadata = {
       name: siteConfig.author.name,
     }
   ],
+  other: {
+    "google-adsense-account": "ca-pub-230388300097265",
+  },
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
