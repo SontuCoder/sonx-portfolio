@@ -11,6 +11,7 @@ function HeroLogo() {
                 src={hero.avatar}
                 alt={hero.name}
                 className="h-full w-full rounded-full object-cover"
+                loading="eager"
             />
         </div>
     );

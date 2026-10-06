@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import Image from "next/image";
 import { Icon } from "@iconify/react"
@@ -15,7 +15,7 @@ import { ChevronRight } from "lucide-react";
 import {ViewMoreButton} from "@/components/common/button";
 import { FadeIn } from "@/components/common/FadeIn";
 
-export function getSortedWorks() {
+function getSortedWorks() {
     return [...works].sort(
         (a, b) => b.role.startDate.getTime() - a.role.startDate.getTime()
     );
@@ -132,7 +132,7 @@ function CompanyHeader({ company, currentRole }: { company: Work; currentRole: R
 function TechnologySection({ technologies }: { technologies: readonly Tech[] }) {
     return (
         <div>
-            <h4 className="mb-3 font-semibold text-xs">Technologies & Tools</h4>
+            <h4 className="mb-3 font-semibold text-xs border-t-2 boeder-border pt-4">Technologies & Tools</h4>
 
             <div className="flex flex-wrap gap-2">
                 {technologies.map((tech) => (
@@ -153,7 +153,7 @@ function AchievementsSection({ achievements }: { achievements: readonly string[]
         <div>
             <h4 className="mb-3 mt-4 font-semibold text-xs">What I've done</h4>
 
-            <ul className="list-disc space-y-1 pl-5 text-xs text-muted">
+            <ul className="list-disc space-y-2 pl-5 text-xs text-muted">
                 {achievements.map((item) => (
                     <li key={item}>{item}</li>
                 ))}
@@ -162,3 +162,4 @@ function AchievementsSection({ achievements }: { achievements: readonly string[]
     );
 }
 
+export { CompanyHeader, TechnologySection, AchievementsSection, getSortedWorks};

@@ -3,6 +3,7 @@
 import { footerQuote } from "@/config/navigation";
 import { Card, CardContent } from "../ui/card";
 import { FadeIn } from "./FadeIn";
+import Container from "../layout/Container";
 
 
 export default function FooterQuotePart() {
@@ -10,6 +11,7 @@ export default function FooterQuotePart() {
     if (!quote) return null;
 
     return (
+        <Container>
         <FadeIn delay={0.9}>
         <Card className="bg-card-bg/50 relative mb-14 overflow-hidden rounded-3xl border">
             <CardContent className="relative p-8">
@@ -31,5 +33,6 @@ export default function FooterQuotePart() {
             </CardContent>
         </Card>
         </FadeIn>
+        </Container>
     );
 }

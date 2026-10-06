@@ -52,7 +52,7 @@ export const works = [
         id: "centelli",
 
         company: "Centelli India LLP",
-        companyLogo: "/companies/centelli.svg",
+        companyLogo: "/companies/Centelli.svg",
         companyUrl: "https://centelli.com",
 
         companyColor: "#1F3C91",
@@ -117,9 +117,16 @@ export const works = [
                 name: "John Doe",
                 position: "Automation Lead",
                 text: "Sontu consistently delivered high-quality automation solutions.",
+                linkedIn: "https://www.linkedin.com/in/johndoe",
+            },
+            {
+                name: "John Doe",
+                position: "Automation Lead",
+                text: "Sontu consistently delivered high-quality automation solutions.",
+                linkedIn: "https://www.linkedin.com/in/johndoe",
             },
         ],
     },
 ] as const satisfies readonly Work[];
 
-export type { Work, Role, Tech };
+export type { Work, Role, Tech, Recommendation };

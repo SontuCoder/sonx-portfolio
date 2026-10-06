@@ -60,7 +60,7 @@ function NavbarLogo() {
 
 export default function Navbar() {
     return (
-        <header className="bg-background/20 sticky top-0 z-50 backdrop-blur-md">
+        <header className="bg-background/60 sticky top-0 z-50 backdrop-blur-md">
             <Container>
                 <nav
                     aria-label="Primary Navigation"
