@@ -44,7 +44,11 @@ export function getProjectBySlug(slug: string): ProjectDetails | null {
 export function getAllProjects(): ProjectDetails[] {
     return getProjectSlugs()
         .map((slug) => getProjectBySlug(slug))
-        .filter((project): project is ProjectDetails => project !== null);
+        .filter((project): project is ProjectDetails => project !== null).sort(
+            (a, b) =>
+                (a.order ?? Infinity) -
+                (b.order ?? Infinity),
+        );;
 }
 
 export function getFeaturedProjects() {
@@ -63,12 +67,6 @@ export function getProjectsByCategory(category: string) {
 
 export function getProjectsByTechnology(technology: string) {
     return getAllProjects().filter((project) => project.technologies.includes(technology));
-}
-
-export function getLatestProjects() {
-    return [...getAllProjects()].sort(
-        (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime(),
-    );
 }
 
 export function parseProjectContent(content: string): ProjectContent {

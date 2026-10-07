@@ -120,7 +120,7 @@ export const works = [
                 linkedIn: "https://www.linkedin.com/in/johndoe",
             },
             {
-                name: "John Doe",
+                name: "John lio",
                 position: "Automation Lead",
                 text: "Sontu consistently delivered high-quality automation solutions.",
                 linkedIn: "https://www.linkedin.com/in/johndoe",
@@ -130,3 +130,5 @@ export const works = [
 ] as const satisfies readonly Work[];
 
 export type { Work, Role, Tech, Recommendation };
+
+/* Recomandations should be Two or Less then it. */

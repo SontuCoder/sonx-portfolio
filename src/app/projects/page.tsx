@@ -1,7 +1,8 @@
-export default function WorkPage() {
-    return (
-        <main className="container py-10">
-            <h1 className="text-3xl font-bold">Projects</h1>
-        </main>
-    );
+import { getAllProjects } from "@/lib/GetProjectDetails";
+import ProjectsPage from "@/components/sections/Projects/ProjectsPage";
+
+export default function Page() {
+    const projects = getAllProjects();
+
+    return <ProjectsPage projects={projects} />;
 }

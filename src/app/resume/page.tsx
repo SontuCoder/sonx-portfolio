@@ -1,3 +1,5 @@
+"use client"
+
 export default function CertificatesPage() {
     return (
         <main className="container py-10">
