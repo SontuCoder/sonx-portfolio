@@ -4,7 +4,6 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import { ThemeProvider } from "@/providers/ThemeProvider";
-import { hankenGrotesk } from "./font";
 
 import Navbar from "@/components/sections/Nevbar/Navbar";
 import Container from "@/components/layout/Container";
@@ -12,15 +11,6 @@ import Footer from "@/components/sections/Footer/Footer";
 import FooterQuotePart from "@/components/common/Quote";
 import OnandemoPet from "@/components/common/OnanDemoPet";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteConfig.url),
@@ -65,14 +55,14 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning className={hankenGrotesk.variable}>
+        <html lang="en" suppressHydrationWarning>
             <body
                 className={cn(
                     "min-h-screen",
                     "bg-background",
-                    "font-sans",
                     "text-foreground",
-                    "antialiased",
+                    `font-hanken-grotesk antialiased`,
+                    "antialiased"
                 )}
             >
                 <ThemeProvider

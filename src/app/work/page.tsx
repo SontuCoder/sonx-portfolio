@@ -7,7 +7,6 @@ import {
     getSortedWorks,
 } from "@/components/sections/Experience/Works";
 import { Work, Recommendation } from "@/config/work";
-import Image from "next/image";
 import { FaLinkedin } from "react-icons/fa6";
 
 export default function WorkPage() {
