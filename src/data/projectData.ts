@@ -18,8 +18,7 @@ export interface ProjectMeta {
   description: string;
 
   cover: string;
-  gallery?: string[];
-
+  
   featured: boolean;
   order?: number;
   published: boolean;

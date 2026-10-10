@@ -118,7 +118,7 @@ export default function ProjectsPage({
                 {filteredProjects.map((project) => (
                     <Link
                         key={project.slug}
-                        href={`/projects/${project.slug}`}
+                        href={`/project/${project.slug}`}
                         className="group/project block py-4 hover:bg-card-bg transition-all duration-300 ease-in-out px-4 rounded-lg cursor-pointer hover:scale-105 group-hover/list:blur-[2px] group-hover/list:opacity-70 hover:blur-none! hover:opacity-100!"
                     >
                         <h2 className="text-foreground font-bold text-lg">

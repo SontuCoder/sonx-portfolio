@@ -12,6 +12,8 @@ import { useMediaQuery } from "usehooks-ts";
 import TooltipWrapper from "@/providers/TooltipWrapper";
 import { Icon } from "@iconify/react";
 import { FadeIn } from "@/components/common/FadeIn";
+import { LuGithub } from "react-icons/lu";
+
 
 
 
@@ -45,7 +47,7 @@ export default function ProjectSection ( {projects}: {projects:ProjectDetails[]}
             </Accordion>
             { isDesktop && <HoverPreview title={hoveredProject?.title} src={hoveredProject?.src} x={mouseX} y={mouseY} /> }
             <FadeIn delay={0.3 + projects.length * 0.1}>
-            <ViewMoreButton text="projects" href="/projects" />
+            <ViewMoreButton text="projects" href="/project" />
             </FadeIn>
         </section>
     )
@@ -167,12 +169,17 @@ function ProjectShortDetails(
                     <li key={item}>{item}</li>
                 ))}
             </ul>
-            <ul className="list-disc space-y-1 pl-5 text-xs text-muted">
-                <li key="github">{project.links?.github ? <ShowDetails href={project.links.github} text="Goto repo tour" external />  : "coming"}</li>
-                <li key="live">{project.links?.live ? 
-                    <ShowDetails href={project.links.live} text="Take a look" external /> 
-                    : "Live coming"}</li>
-            </ul>
+            {project.links?.github && 
+            <TooltipWrapper text="Goto Github">
+                <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`mt-2 text-foreground inline-flex items-center gap-1 text-sm font-medium border-2 border-muted/20 rounded-full p-2 hover:bg-${project.colors.primary}/50 hover:scale-105 transition-all`}
+                >
+                    <LuGithub className="h-4 w-4" />
+                </a>
+                </TooltipWrapper>}
             <ShowDetails href={`/project/${project.slug}`} text="Show details" external={false}/>
         </div>
         )

@@ -70,13 +70,54 @@ export function getProjectsByTechnology(technology: string) {
 }
 
 export function parseProjectContent(content: string): ProjectContent {
+    const sections: Record<string, string[]> = {};
+
+    let currentSection = "";
+
+    const lines = content.split(/\r?\n/);
+
+    for (const line of lines) {
+        const trimmed = line.trim();
+
+        // Detect Markdown headings (#, ##, ###)
+        const heading = trimmed.match(/^#{1,3}\s+(.+)$/);
+
+        if (heading) {
+            currentSection = heading[1]
+                .toLowerCase()
+                .trim();
+
+            sections[currentSection] ??= [];
+            continue;
+        }
+
+        if (currentSection) {
+            sections[currentSection].push(line);
+        }
+    }
+
+    // Extract paragraph content
+    const getText = (section: string): string => {
+        return (sections[section] ?? [])
+            .join("\n")
+            .trim();
+    };
+
+    // Extract Markdown list items
+    const getList = (section: string): string[] => {
+        return (sections[section] ?? [])
+            .map((line) => line.trim())
+            .filter((line) => /^[-*+]\s+/.test(line))
+            .map((line) => line.replace(/^[-*+]\s+/, "").trim());
+    };
+
     return {
-        overview: "",
-        features: [],
-        challenges: [],
-        learnings: [],
-        futureImprovements: [],
-        highlights: [],
+        overview: getText("overview"),
+        features: getList("features"),
+        challenges: getList("challenges"),
+        highlights: getList("highlights"),
+        learnings: getList("what i learned"),
+        futureImprovements: getList("future improvements"),
     };
 }
 
