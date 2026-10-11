@@ -34,7 +34,7 @@ export default function ProjectSection ( {projects}: {projects:ProjectDetails[]}
     const isDesktop = useMediaQuery("(hover: hover) and (pointer: fine)");
     return (
         <section id="project" aria-labelledby="project-heading" className="mt-14">
-            <FadeIn delay={0.3}>
+            <FadeIn delay={0.2}>
             <h2
                 id="project-heading"
                 className="test-foreground font-mono text-md font-semibold tracking-tight md:text-2xl"
@@ -46,7 +46,7 @@ export default function ProjectSection ( {projects}: {projects:ProjectDetails[]}
                 {projects.map((project, index) => renderProject(project,  setHoveredProject, mouseX, mouseY, index))}
             </Accordion>
             { isDesktop && <HoverPreview title={hoveredProject?.title} src={hoveredProject?.src} x={mouseX} y={mouseY} /> }
-            <FadeIn delay={0.3 + projects.length * 0.1}>
+            <FadeIn delay={0.2 + projects.length * 0.1}>
             <ViewMoreButton text="projects" href="/project" />
             </FadeIn>
         </section>
@@ -60,7 +60,7 @@ function renderProject(project : ProjectDetails,  setHoveredProject:React.Dispat
     mouseY: MotionValue<number>, index: number) {
 
     return (
-        <FadeIn delay={0.3 + index * 0.1} key={project.slug}>
+        <FadeIn delay={0.2 + index * 0.1} key={project.slug}>
         <AccordionItem key={project.slug} value={project.slug}>
             <AccordionTrigger className="group cursor-pointer hover:no-underline focus:no-underline focus-visible:no-underline"
                 onMouseEnter={() =>
@@ -90,7 +90,7 @@ function renderProject(project : ProjectDetails,  setHoveredProject:React.Dispat
 function ProjectHeader (projectData : ProjectDetails){
     console.log(projectData.colors.primary)
     return (
-        <div className={`flex w-full flex-col border-l-4 rounded-md border-t-4 pl-4 pt-4 `} style={{borderColor: `var(${projectData.colors.primary})`}}>
+        <div className={`flex w-full flex-col border-l-4 rounded-md border-t-4 pl-4 pt-4 `} style={{borderColor: `var(--${projectData.colors.primary})`}}>
         <div className="flex w-full items-start gap-4 text-left ">
 
             <div className="flex-1">

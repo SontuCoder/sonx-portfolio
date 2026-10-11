@@ -12,7 +12,7 @@ export default function FooterQuotePart() {
 
     return (
         <Container>
-        <FadeIn delay={0.9}>
+        <FadeIn delay={0.5}>
         <Card className="bg-card-bg/50 relative mb-14 overflow-hidden rounded-3xl border">
             <CardContent className="relative p-8">
                 <svg
@@ -25,7 +25,6 @@ export default function FooterQuotePart() {
                 </svg>
                 <blockquote className="relative z-10 space-y-2">
                     <p className="text-muted text-md font-semibold italic">"{quote?.quote}"</p>
-
                     <footer className="text-muted text-right text-sm">
                         — {quote?.author}
                     </footer>

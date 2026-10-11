@@ -12,7 +12,7 @@ export default function CertificateSection() {
     return (
         <section id="certificate" aria-labelledby="certificate-heading" className="mt-14">
             {/* Header */}
-            <FadeIn delay={0.5}>
+            <FadeIn delay={0.3}>
             <h2
                 id="certificate-heading"
                 className="test-foreground text-md font-mono font-semibold tracking-tight md:text-2xl"
@@ -21,7 +21,7 @@ export default function CertificateSection() {
             </h2>
             </FadeIn>
             <div className="pl-0 md:pl-4 mt-4">
-            <FadeIn delay={0.6}>
+            <FadeIn delay={0.35}>
             <p className="text-muted max-w-xl text-sm leading-6 md:text-base">
                 Professional certifications that validate my expertise in automation, software
                 development, and Ai Agentic technologies.
@@ -31,13 +31,13 @@ export default function CertificateSection() {
                 {certificates
                     .filter((c) => c.featured)
                     .map((certificate, index) => (
-                        <FadeIn delay={0.6 + index*0.1} key={certificate.code}>
+                        <FadeIn delay={0.3 + index*0.1} key={certificate.code}>
                         <CertificateCard key={certificate.code} certificate={certificate} />
                         </FadeIn>
                     ))}
             </div>
             </div>
-            <FadeIn delay={0.6 + certificates.length*0.1}>
+            <FadeIn delay={0.4 + certificates.length*0.1}>
             <ViewMoreButton text="certificates" href="/certificates" />
             </FadeIn>
         </section>
@@ -45,7 +45,7 @@ export default function CertificateSection() {
 }
 
 
-function CertificateCard({
+export function CertificateCard({
     certificate
 }: {certificate: CertificateDetails}) {
     return (

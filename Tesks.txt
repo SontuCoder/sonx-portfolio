@@ -1,2 +1,0 @@
-# Edit config/site.ts
-# Add awards section in Main page

@@ -1,5 +1,6 @@
 import { FadeIn } from "@/components/common/FadeIn";
 import { awards } from "@/config/awards";
+import ImageLightbox  from "./AwardsPopup";
 
 
 export default function Awards() {
@@ -9,8 +10,8 @@ export default function Awards() {
             aria-labelledby="awards-heading"
             className="my-14"
         >
-            <FadeIn delay={0.8} >
-            <div className="mb-12">
+            <FadeIn delay={0.5} >
+            <div className="mb-4">
                 <p className="text-muted mb-2 text-sm">
                     Recognition
                 </p>
@@ -22,7 +23,7 @@ export default function Awards() {
             </FadeIn>
             <div className="">
                 {awards.map((group, index) => (
-                    <FadeIn delay={0.8 + index*0.05} key={group.year}>
+                    <FadeIn delay={0.5 + index*0.05} key={group.year}>
                     <div
                         key={group.year}
                         className="border-border grid border-b py-8 md:grid-cols-[120px_1fr]"
@@ -44,7 +45,7 @@ export default function Awards() {
                                     {/* Award Image - hidden below md */}
                                     <div className="hidden shrink-0 md:block">
                                         <div className="border-border bg-muted relative h-18 w-25 overflow-hidden rounded-xl border">
-                                            <img
+                                            <ImageLightbox
                                                 src={award.image}
                                                 alt={award.title}
                                                 className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
