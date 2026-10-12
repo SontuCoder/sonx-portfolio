@@ -112,20 +112,20 @@ export const works = [
             ],
         },
 
-        recommendations: [
-            {
-                name: "John Doe",
-                position: "Automation Lead",
-                text: "Sontu consistently delivered high-quality automation solutions.",
-                linkedIn: "https://www.linkedin.com/in/johndoe",
-            },
-            {
-                name: "John lio",
-                position: "Automation Lead",
-                text: "Sontu consistently delivered high-quality automation solutions.",
-                linkedIn: "https://www.linkedin.com/in/johndoe",
-            },
-        ],
+        // recommendations: [
+            // {
+            //     name: "John Doe",
+            //     position: "Automation Lead",
+            //     text: "Sontu consistently delivered high-quality automation solutions.",
+            //     linkedIn: "https://www.linkedin.com/in/johndoe",
+            // },
+            // {
+            //     name: "John lio",
+            //     position: "Automation Lead",
+            //     text: "Sontu consistently delivered high-quality automation solutions.",
+            //     linkedIn: "https://www.linkedin.com/in/johndoe",
+            // },
+        // ],
     },
 ] as const satisfies readonly Work[];
 
