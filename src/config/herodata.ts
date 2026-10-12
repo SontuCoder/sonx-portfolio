@@ -23,7 +23,7 @@ export const hero = {
 export const heroSocials = [
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/subhadip-maity-5ba595300/",
+    href: "https://www.linkedin.com/in/subhadip-maity-sontucode",
     icon: FaLinkedin,
   },
   {
