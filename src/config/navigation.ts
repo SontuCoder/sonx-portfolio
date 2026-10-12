@@ -8,9 +8,9 @@ export const footerNavigation = [
   { name: "Home", href: "/" },
   { name: "Work", href: "/work" },
   { name: "Resume", href: "/resume" },
-  { name: "Projects", href: "/projects" },
+  { name: "Projects", href: "/project" },
   { name: "Certeficates", href: "/certificates" },
-  { name: "RSS FEED", href: "/blog/feed.xml" },
+  { name: "RSS FEED", href: "/feed.xml" },
 ] as const;
 
 export const footerQuote = [
