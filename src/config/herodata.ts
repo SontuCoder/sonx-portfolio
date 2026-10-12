@@ -33,7 +33,7 @@ export const heroSocials = [
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/subha_dip002",
+    href: "https://www.instagram.com/sontucode.dev",
     icon: FaInstagram,
   },
   {

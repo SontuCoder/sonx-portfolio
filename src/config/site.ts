@@ -4,7 +4,7 @@ export const siteConfig = {
     title: "Subhadip Maity | AI Automation & Full Stack Developer",
     description:
         "Portfolio of Subhadip Maity. AI Automation Developer, Full Stack Engineer, RPA Developer, and System Design Enthusiast.",
-    url: "https://sontucoder.dev",
+    url: "https://sontucode.dev",
     ogImage: "/assets/ogImage.png",
 
     author: {

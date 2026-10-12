@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
@@ -10,6 +9,7 @@ import Container from "@/components/layout/Container";
 import Footer from "@/components/sections/Footer/Footer";
 import FooterQuotePart from "@/components/common/Quote";
 import OnandemoPet from "@/components/common/OnanDemoPet";
+import { JsonLd } from "@/components/seo/json-id";
 
 
 export const metadata: Metadata = {
@@ -37,7 +37,12 @@ export const metadata: Metadata = {
         description: siteConfig.description,
         url: siteConfig.url,
         siteName: siteConfig.name,
-        images: [siteConfig.ogImage],
+        images: [{
+            url: siteConfig.ogImage,
+            width: 1200,
+            height: 630,
+            alt: siteConfig.title,
+    }],
         locale: "en_US",
         type: "website",
     },
@@ -47,6 +52,17 @@ export const metadata: Metadata = {
         description: siteConfig.description,
         images: [siteConfig.ogImage],
     },
+     robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -65,6 +81,7 @@ export default function RootLayout({
                     "antialiased"
                 )}
             >
+                <JsonLd />
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="system"

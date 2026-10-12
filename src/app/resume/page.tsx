@@ -16,7 +16,7 @@ export default function ResumePage() {
                 </FadeIn>
             </div>
              <div className="mt-10 h-160 overflow-hidden rounded-xl border">
-                <FadeIn delay={0.2}>
+            <FadeIn delay={0.2} className="h-full w-full">
             <iframe
                 src="https://drive.google.com/file/d/1-4ecFcLR2b_xMsRLA9EuFnT0dO0O-T05/preview"
                 title="Resume"

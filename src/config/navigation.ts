@@ -10,7 +10,7 @@ export const footerNavigation = [
   { name: "Resume", href: "/resume" },
   { name: "Projects", href: "/project" },
   { name: "Certeficates", href: "/certificates" },
-  { name: "RSS FEED", href: "/feed.xml" },
+  // { name: "RSS FEED", href: "/feed.xml" },
 ] as const;
 
 export const footerQuote = [
