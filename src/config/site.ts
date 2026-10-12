@@ -10,15 +10,15 @@ export const siteConfig = {
     author: {
         name: "Sontu Maity",
         username: "@SontuCoder",
-        email: "hello@sontucoder.dev",
+        email: "subhadipmaity791@gmail.com",
     },
 
     links: {
         github: "https://github.com/SontuCoder",
-        linkedin: "https://linkedin.com/in/your-profile",
-        twitter: "https://x.com/your-handle",
-        email: "mailto:hello@sontucoder.dev",
-        resume: "/resume.pdf",
+        linkedin: "https://linkedin.com/in/subhadip-maity-sontucode",
+        // twitter: "https://x.com/your-handle",
+        email: "mailto:subhadipmaity791@gmail.com",
+        resume: "https://drive.google.com/file/d/1-4ecFcLR2b_xMsRLA9EuFnT0dO0O-T05/preview",
     },
 
     keywords: [
