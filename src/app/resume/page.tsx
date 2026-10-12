@@ -2,7 +2,7 @@
 
 import { FadeIn } from "@/components/common/FadeIn";
 
-export default function CertificatesPage() {
+export default function ResumePage() {
     return (
         <main className="container py-10">
             <div className="text-start">
