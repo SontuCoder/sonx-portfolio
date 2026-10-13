@@ -8,6 +8,7 @@ import type {
 import { LuCalendarDays } from "react-icons/lu";
 import {ArrowRight} from "lucide-react";
 import Link from "next/link";
+import { FadeIn } from "@/components/common/FadeIn";
 
 type ProjectFilter = "All" | ProjectCategory;
 
@@ -70,15 +71,18 @@ export default function ProjectsPage({
         <main className="container py-10">
             {/* Header */}
             <div className="text-start">
+                <FadeIn delay={0.1}>
                 <h1 className="text-foreground font-mono text-lg font-semibold tracking-tight md:text-2xl">
                     Projects
                 </h1>
-
+                </FadeIn>
+                <FadeIn delay={0.2}>
                 <p className="text-muted mt-2 max-w-2xl text-sm">
                     Here are some of the projects I have worked on.
                     Each project showcases my skills and experience
                     across various technologies and frameworks.
                 </p>
+                </FadeIn>
             </div>
 
             {/* Filters */}
@@ -87,6 +91,7 @@ export default function ProjectsPage({
                     const active = activeFilter === name;
 
                     return (
+                        <FadeIn delay={0.3} key={name}>
                         <button
                             key={name}
                             type="button"
@@ -109,13 +114,15 @@ export default function ProjectsPage({
                                 {count}
                             </span>
                         </button>
+                        </FadeIn>
                     );
                 })}
             </div>
 
             {/* Projects */}
             <div className="group/list mt-10">
-                {filteredProjects.map((project) => (
+                {filteredProjects.map((project, index) => (
+                    <FadeIn delay={0.2 + index*0.1} key={project.slug}>
                     <Link
                         key={project.slug}
                         href={`/project/${project.slug}`}
@@ -140,12 +147,15 @@ export default function ProjectsPage({
                             </span>
                         </p>
                     </Link>
+                    </FadeIn>
                 ))}
 
                 {filteredProjects.length === 0 && (
+                    <FadeIn delay={0.4}>
                     <p className="text-muted py-10 text-sm">
                         No projects found.
                     </p>
+                    </FadeIn>
                 )}
             </div>
         </main>
