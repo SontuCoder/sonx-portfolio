@@ -48,15 +48,15 @@ This portfolio reflects my work in **UiPath, Playwright, TypeScript, full-stack 
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO
-npm install
+git clone https://github.com/SontuCoder/sonx-portfolio.git
+cd sonx-portfolio
+bun install
 ```
 
 Start the development server:
 
 ```bash
-npm run dev
+bun dev
 ```
 
 Open **http://localhost:3000** in your browser.
