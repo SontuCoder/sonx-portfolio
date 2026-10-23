@@ -9,7 +9,10 @@ export type ProjectCategory =
   | "Agentic"
   | "System Design"
   | "UiPath Action Center"
-  | "Document Understanding";
+  | "Document Understanding"
+  | "TypeScript"
+  | "Playwright"
+  | "FastAPI";
 
 export interface ProjectMeta {
   slug: string;
