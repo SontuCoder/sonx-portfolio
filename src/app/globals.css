@@ -32,7 +32,9 @@
   --color-tooltip: var(--tooltip-background);
   --color-tooltip-text: var(--tooltip-text);
   --color-logo-bg: var(--logo-bg);
-  --color-p1-color: var(--p1-color)
+  --color-p1-color: var(--p1-color);
+  --color-p2-color: var(--p2-color);
+  --color-p3-color: var(--p3-color);
 }
 
 :root {
@@ -46,6 +48,8 @@
   --tooltip-text: #F9FAFB;
   --logo-bg: oklch(0.792 0.118 264.5);
   --p1-color: #00B894;
+  --p2-color: #CE1455;
+  --p3-color: #FA4616;
   --card-bg: oklch(0.98 0.004 255);
 }
 
@@ -60,6 +64,8 @@
   --tooltip-text: #0F172A;
   --logo-bg: oklch(0.905 0.182 98.111);
   --p1-color: #003930;
+  --p2-color: #CE1455;
+  --p3-color: #FA4616;
   --card-bg: oklch(0.22 0.008 255);
 }
 

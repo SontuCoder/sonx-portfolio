@@ -82,7 +82,7 @@ export const certificates: CertificateDetails[] = [
     logo: "https://api.accredible.com/v1/credentials/oy47uy9x/artifact/badge",
     verifiedBy: "UiPath",
     issuedDate: new Date("2025-11-17"),
-    featured: true,
+    featured: false,
     verificationUrl: "https://credentials.uipath.com/e2e71dd3-b0f4-4f0f-b6eb-415138eccd98#acc.6TfQJrzy",
     learn: [
     "Understanding UiPath automation use cases and Clean Core principles for SAP systems.",

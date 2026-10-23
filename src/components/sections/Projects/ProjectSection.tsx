@@ -143,13 +143,15 @@ function TechnologySection({ technologies }: { technologies: string[] }) {
             <h4 className="mb-3 font-semibold text-xs">Technologies & Tools</h4>
 
             <div className="flex flex-wrap gap-2">
-                {technologies.map((tech) => (
+                {technologies.map((tech) => {
+                    let icon = tech.split(" - ")[1].split(":").length > 1 ? tech.split(" - ")[1] : "logos:"+tech.split(" - ")[1];
+                    return(
                     <TooltipWrapper key={tech} text={tech.split("-")[0]}>
                         <div className="border-muted/20 hover:bg-slate-500/50 bg-slate-500/10 flex h-7 w-7 items-center justify-center rounded-md border-2 border-dashed transition-all hover:scale-105">
-                            <Icon icon={`logos:${tech.toLowerCase()}`} className="h-4 w-4" />
+                            <Icon icon={`${icon.toLowerCase()}`} className="h-4 w-4" />
                         </div>
                     </TooltipWrapper>
-                ))}
+                )})}
             </div>
         </div>
     );

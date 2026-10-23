@@ -76,6 +76,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 }
 
 function ProjectHeader({ project }: { project: ProjectDetails }) {
+
     return (
         <header className="mt-6">
             <FadeIn delay={0.1}>
@@ -88,7 +89,7 @@ function ProjectHeader({ project }: { project: ProjectDetails }) {
             {/* Project cover */}
             {project.cover && (
                 <FadeIn delay={0.2}>
-                    <div className="bg-muted/10 mt-6 overflow-hidden rounded-xl">
+                    <div className={`bg-muted/10 mt-6 overflow-hidden rounded-xl shadow-2xl shadow-${project.colors.primary}/70`}>
                         <img
                             src={project.cover}
                             alt={`${project.title} cover`}
@@ -220,16 +221,18 @@ function ProbSolsAndOverview({ project }: { project: ProjectDetails }) {
                     </h2>
 
                     <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech) => (
+                        {project.technologies.map((tech) => {
+                            let icon = tech.split(" - ")[1].split(":").length > 1 ? tech.split(" - ")[1] : "logos:"+tech.split(" - ")[1];
+                            return(
                             <TooltipWrapper key={tech} text={tech.split("-")[0]}>
                                 <div className="border-muted/20 flex h-7 w-7 items-center justify-center rounded-md border-2 border-dashed bg-slate-500/10 transition-all hover:scale-105 hover:bg-slate-500/50">
                                     <Icon
-                                        icon={`logos:${tech.toLowerCase()}`}
+                                        icon={`${icon.toLowerCase()}`}
                                         className="h-4 w-4"
                                     />
                                 </div>
                             </TooltipWrapper>
-                        ))}
+                        )})}
                     </div>
                 </section>
             </FadeIn>
