@@ -39,7 +39,7 @@ export const certificates: CertificateDetails[] = [
     name: "UiPath Academy Automation Developer Professional Training",
     code: "",
     color: "#CE1455",
-    logo: "https://api.accredible.com/v1/credentials/mcwhzerb/artifact/badge",
+    logo: "https://artifacts.credential.net/mcwhzerb/badge/3288c050c692f520a11052b18b4b688e/master.png",
     verifiedBy: "UiPath",
     issuedDate: new Date("2025-12-24"),
     featured: true,
