@@ -31,7 +31,7 @@ export default function CertificateSection() {
                 {certificates
                     .filter((c) => c.featured)
                     .map((certificate, index) => (
-                        <FadeIn delay={0.3 + index*0.1} key={certificate.code}>
+                        <FadeIn delay={0.3 + index*0.1} key={certificate.name}>
                         <CertificateCard key={certificate.code} certificate={certificate} />
                         </FadeIn>
                     ))}
@@ -48,8 +48,9 @@ export default function CertificateSection() {
 export function CertificateCard({
     certificate
 }: {certificate: CertificateDetails}) {
+    const isExternal = /^https?:\/\//i.test(certificate.logo);
     return (
-        <Card className="group relative overflow-hidden border border-border/60 bg-card transition-all duration-300 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-xl">
+        <Card className="group relative flex h-full flex-col overflow-hidden border border-border/60 bg-card transition-all duration-300 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-xl">
 
             {/* Gradient Background */}
             <div
@@ -68,16 +69,17 @@ export function CertificateCard({
                 }}
             />
 
-            <CardContent className="relative space-y-6 p-7">
+            <CardContent className="relative flex flex-1 flex-col space-y-6 p-7">
 
                 {/* Logo */}
-                <div className="flex justify-center">
+                <div className="flex h-20 items-center justify-center">
                     <Image
                         src={certificate.logo}
                         alt={certificate.verifiedBy}
-                        width={72}
-                        height={72}
-                        className="h-14 w-auto object-contain grayscale transition-all duration-300 group-hover:scale-105 group-hover:grayscale-0"
+                        width={120}
+                        height={80}
+                        unoptimized={isExternal}
+                        className="max-h-16 max-w-full w-auto object-contain grayscale transition-all duration-300 group-hover:scale-105 group-hover:grayscale-0"
                     />
                 </div>
 
@@ -93,7 +95,7 @@ export function CertificateCard({
                 </div>
 
                 {/* Footer */}
-                <div className="flex items-center justify-between border-t border-border/60 pt-4">
+                <div className="mt-auto flex items-center justify-between border-t border-border/60 pt-4">
 
                     <div className="flex items-center gap-2 text-xs text-muted-foreground">
                         <Calendar className="h-3.5 w-3.5" />
